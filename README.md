@@ -1,14 +1,12 @@
-# VGA controller & SRAM framebuffer
+# VGA Timing Controller with SRAM Framebuffer
 
-**Verilog / SystemVerilog · RTL and verification exercise**
+**SystemVerilog · 640 × 480 timing · RGB output**
 
-This standalone repository preserves the original `vga-sram` exercise from my `hdl-labs` collection. Original RTL, testbench, simulator scripts and existing evidence are preserved byte-for-byte. This packaging step is not a new simulation or a claim of full protocol compliance.
+A VGA timing and pixel-output design with an 80 × 60 RGB332 framebuffer scaled across a 640 × 480 active image. The RTL generates horizontal and vertical synchronization, blanks inactive video, and supports framebuffer writes.
 
-## Overview and original documentation
+The framebuffer is internal RTL storage. The retained simulation results do not establish external SRAM-interface compatibility or physical display operation.
 
-Preserve timing/pixel logic and testbench. Document video timing and distinguish simulation from physical display testing.
-
-See [the original exercise README](SOURCE_README.md) for its existing specification, source layout and tool instructions. The text above identifies review goals; it does not claim that new enhancements have already been implemented.
+See [original source documentation](SOURCE_README.md) for the baseline files and the verification-status section below for the available evidence.
 
 ## Run
 
@@ -32,4 +30,4 @@ Source commit: `df8d6f66898a08df75cd2071ddac7bbba9ba9b16`. Source path: `project
 
 ## Next engineering work
 
-Review the specification and implementation, run the supplied tests, add independently justified checks, and record actual results and known limitations. Waveform screenshots can be added later; no fabricated screenshots or coverage figures are needed.
+Planned checks will cover complete frame timing, synchronization widths, blanking, framebuffer address bounds, and pixel-write/readback behaviour. Board timing and physical display results will require a defined FPGA target.
