@@ -1,0 +1,19 @@
+{
+  "source_repository": "https://github.com/rouhan28may-droid/hdl-labs.git",
+  "source_commit": "df8d6f66898a08df75cd2071ddac7bbba9ba9b16",
+  "source_folder": "projects/vga-sram",
+  "extraction": "Source snapshot, not a new implementation or new verification run.",
+  "source_sha256": {
+    "docs/verification_plan.md": "3e49ce999aeb32cd309f2c95413eaedcc5588a03304010f6c8f7ff3b5850daeb",
+    "SOURCE_README.md": "c4358488dcc04049d88d845d7d56a8cc125193fc1d97c5d9cf826c822c0ebf46",
+    "reports/compile.log": "a9b4fca2bd4f8bad5100c175b1566c3e8882b76888dbaa18fcb39fd58e7f8053",
+    "reports/README.md": "ccdaf75f775804c6ccfcc50403e848888714b37d8f3641542c80387479dd366f",
+    "reports/simulation.log": "a86444c037e8ecf14fdfd1ebb649b4ec93c5595234772d65396edd99cff63d90",
+    "rtl/design.sv": "fbd1e63b057e7cbcb3eb75fbfc36714154773066774cdd27a99b3d74a9575a57",
+    "scripts/run_sim.ps1": "b2e33816032bc5316de0a0a6321e9fa3ab72fae1112a12f07afc8882e75a0dda",
+    "sim/filelist.f": "5a9b0b8af8b3475ca84741fd64d0c78c990ba521d0323b7760a2284dfb048b8e",
+    "sim/run.sh": "cd1e69d840e7093c790d5fed5acb3719cdd282118ec31a309c81af36cc9bd243",
+    "tb/tb_top.sv": "813623958422690ebf0752a66354d085686fa483eaf8c35daa570d55e87c7dca",
+    "waves/README.md": "6d08b508a8afadffbd00b6cc401f977b87432d22ecda2064d6a2d3288999b944"
+  }
+}
