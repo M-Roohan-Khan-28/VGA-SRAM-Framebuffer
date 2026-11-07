@@ -1,0 +1,41 @@
+{
+  "repository": "VGA-SRAM-Framebuffer",
+  "source_revision": "bc29290c9e223325f82d23d2eebbc797a017609c",
+  "source_dirty": false,
+  "sources": [
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-hsync-fault.sv",
+      "sha256": "ac56025361dc9d5e277e2d60bb90b8c9a42ca8e64f26db4de66bb7a3eec8a7c6"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\vga\\tb\\tb_top.sv",
+      "sha256": "813623958422690ebf0752a66354d085686fa483eaf8c35daa570d55e87c7dca"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\vga\\tb\\vga_raster_test.sv",
+      "sha256": "ccb49cf3216231f4b65d16eb4f56e6f60bd49af8a3c3c068554b01a5938a7126"
+    }
+  ],
+  "seed": "exhaustive RGB332 0..255",
+  "timeout_seconds_per_command": 180,
+  "simulations": [
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "FAIL"
+    }
+  ],
+  "overall": "FAIL",
+  "simulator_version": "Model Technology ModelSim - INTEL FPGA STARTER EDITION vsim 2020.1 Simulator 2020.02 Feb 28 2020",
+  "error": "raster failed or marker/count missing",
+  "elapsed_seconds": 2.605
+}

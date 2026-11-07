@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "origin": "simulator",
+  "source_filename": "wave-write.vcd",
+  "source_sha256": "7f185bb99a237e198783f5c16beb2e3cad38adf4c96df08e83f3c1c3066361b1",
+  "timescale": "1ps",
+  "start_tick": 3089845000,
+  "end_tick": 3090165000,
+  "source_final_tick": 3090165000,
+  "signals": [
+    {
+      "name": "vga_raster_test.clk",
+      "code": "!",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.sram_we",
+      "code": "#",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.sram_addr",
+      "code": "$",
+      "width": 13,
+      "kind": "reg",
+      "bit_range": "[12:0]"
+    },
+    {
+      "name": "vga_raster_test.sram_data_in",
+      "code": "%",
+      "width": 8,
+      "kind": "reg",
+      "bit_range": "[7:0]"
+    },
+    {
+      "name": "vga_raster_test.active_video",
+      "code": "(",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.red[3]",
+      "code": ")",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.red[2]",
+      "code": "*",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.red[1]",
+      "code": "+",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.red[0]",
+      "code": ",",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.green[3]",
+      "code": "-",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.green[2]",
+      "code": ".",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.green[1]",
+      "code": "/",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.green[0]",
+      "code": "0",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.blue[3]",
+      "code": "1",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.blue[2]",
+      "code": "2",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.blue[1]",
+      "code": "3",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.blue[0]",
+      "code": "4",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.rh",
+      "code": "5",
+      "width": 32,
+      "kind": "integer",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.rv",
+      "code": "6",
+      "width": 32,
+      "kind": "integer",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.dut.h_count",
+      "code": ":",
+      "width": 10,
+      "kind": "reg",
+      "bit_range": "[9:0]"
+    },
+    {
+      "name": "vga_raster_test.dut.v_count",
+      "code": ";",
+      "width": 10,
+      "kind": "reg",
+      "bit_range": "[9:0]"
+    },
+    {
+      "name": "vga_raster_test.dut.read_address",
+      "code": "<",
+      "width": 13,
+      "kind": "reg",
+      "bit_range": "[12:0]"
+    },
+    {
+      "name": "vga_raster_test.dut.pixel_data",
+      "code": "=",
+      "width": 8,
+      "kind": "reg",
+      "bit_range": "[7:0]"
+    }
+  ],
+  "same_tick_collapses": 0,
+  "functional_result": "NOT_ASSESSED_BY_RENDERER",
+  "capture_source_sha256": "e21bb2bb6ecce6915106cf48854836ce7538f8f5fe57aa4b12e269417a4a46db",
+  "capture_source_representation": "original_simulator_capture_crlf",
+  "source_representation": "committed_git_blob_lf"
+}

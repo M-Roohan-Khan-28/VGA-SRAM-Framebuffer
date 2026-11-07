@@ -1,0 +1,8 @@
+{
+    "source_revision":  "bc29290c9e223325f82d23d2eebbc797a017609c",
+    "fault":  "hsync",
+    "mutant_sha256":  "AC56025361DC9D5E277E2D60BB90B8C9A42CA8E64F26DB4DE66BB7A3EEC8A7C6",
+    "wrapper_exit_code":  1,
+    "expected_mismatch_seen":  true,
+    "diagnostic":  "# ** Fatal: VGA_RASTER_MISMATCH frame=0 h=656 v=0 div=0 expected=010/000 observed=110/000"
+}

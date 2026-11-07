@@ -69,7 +69,9 @@ end
 always @(posedge clk)
 begin
 
-    if(sram_we)
+    // The 13-bit write address can exceed the 4,800-byte framebuffer.
+    // Ignore out-of-range requests; no wrapped or unknown-index write.
+    if(sram_we && sram_addr < 13'd4800)
         sram[sram_addr] <= sram_data_in;
 
 end

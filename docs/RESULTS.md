@@ -1,0 +1,91 @@
+# VGA raster results — 8 November 2026
+
+## Reset-edge oracle correction
+
+At source commit `e790d1f1caf0f8650352a251465b214a66159a36`, the
+reference framebuffer writes only on `posedge clk`, matching the DUT even
+while raster reset is asserted. Expected video pins are sampled after the
+clocked reference write and DUT nonblocking updates settle. A bounded
+reset-between-clocks test checks two addresses before their write clock edges
+and after those edges while reset remains high: **8 temporal checks**, exit 0.
+
+The [clean detached GitHub clone run](../reports/technical-release-2026-11-08/clean-clone/)
+passed the preserved 7-check bench, the new 8-check reset test, and the
+two-frame oracle's **29,588,940 public-pin comparisons**; wrapper exit 0.
+ModelSim Intel FPGA Starter Edition reported
+`vsim 2020.1 Simulator 2020.02 Feb 28 2020`. The clean source revision and
+individual simulation exits are in `results.json`. The
+[disposable old-oracle control](../reports/technical-release-2026-11-08/old-oracle-control/)
+failed at 33 ns with `VGA_RESET_WRITE_EARLY`: the reference had `5a`, while
+the DUT retained `1c` until a clock. The wrapper exited 1. Its mutant bench
+and raw failure log are retained separately; no RTL was changed.
+
+The earlier waveform captures and result records below remain historical.
+The [byte provenance guide](MEASURED_WAVEFORMS.md) distinguishes original
+CRLF capture hashes from committed LF VCD hashes. Newline conversion did not
+change the simulation event sequence.
+
+## Measured boundary follow-up
+
+Tested source/runner commit: `950026b022816b961df24c52e5186b051fca83f4`.
+The fresh GitHub branch clone passed the preserved seven-check bench and the
+two-frame independent oracle with 29,588,940 public-pin comparisons. Its four
+additional self-checking capture modes passed at horizontal boundaries,
+vertical boundaries, framebuffer write-to-pixel, and frame wrap. They produced
+four short raw VCDs and six readable measured figures. See the
+[capture guide](MEASURED_WAVEFORMS.md) and [raw run](../reports/technical-completion-2026-11-07/boundary-captures/).
+The full raster and wave modes each exited 0; their exact markers, tool
+version, VCD hashes and cropped time ranges are in the new JSON. The figures
+do not substitute for the independent oracle. Historical runs below remain
+unchanged.
+
+## Earlier raster qualification
+
+Tested source/runner commit: `bc29290c9e223325f82d23d2eebbc797a017609c`.
+ModelSim Intel FPGA Starter Edition `vsim 2020.1 Simulator 2020.02
+Feb 28 2020`. Deterministic input class: all 256 RGB332 byte values.
+
+| Executed simulation | Actual result |
+| --- | --- |
+| Original seven-check directed bench | PASS, 7 checks, wrapper exit 0 |
+| Independent public-pin raster oracle | PASS, 29,588,940 pin comparisons over 1,232,740 sampled pixels; 2 complete frame wraps, 922,318 active samples, 147,845 HSYNC-low samples, 3,201 VSYNC-low samples, 258 valid writes, 2 invalid-write attempts and 4 raster reset pulses; wrapper exit 0 |
+| Short measured wave run | PASS, 21,222 pin comparisons and 754 sampled pixels; wrapper exit 0 |
+
+The [reference model](../tb/vga_raster_test.sv) advances from input clock
+edges and reset rather than DUT private counters, and compares externally
+visible sync, active and RGB pins. It checks every output observation in its
+test interval. It verified all 256 RGB332 values through display outputs,
+8×8 replication, row/line/frame transitions, both sync windows, retained
+framebuffer writes during reset, a later visible write, and invalid-address
+non-aliasing. The counts include partial intervals before the final two
+complete frames; they are check totals, not coverage percentages.
+
+Two disposable RTL faults each raised `VGA_RASTER_MISMATCH` and caused
+wrapper exit **1**: shifting the HSYNC start from 656 to 657, and wrapping
+an out-of-range write back into the valid framebuffer. Their mutant source,
+hash, raw logs, JSON and fault summary are in separate `fault-*` directories.
+No mutant is in the tested source. The runner rejects simulator fatals even
+when ModelSim returns process exit 0.
+
+The [passing raw logs/JSON](../reports/technical-completion-2026-11-07/)
+record exact commands, source SHA-256 hashes, simulator version, terminal
+markers and 180-second per-command timeouts. The
+[measured SVG](../reports/technical-completion-2026-11-07/vga-raster.svg)
+was rendered from the [simulator VCD](../reports/technical-completion-2026-11-07/vga-raster.vcd),
+covering the first 35.365 µs, including a visible row and horizontal sync
+boundary. The adjacent metadata identifies top, selected pins, 1 ps tick
+units and VCD SHA-256. The renderer does not establish functional PASS.
+Vertical sync and frame wrap were checked by the oracle; this published
+short SVG does not depict those later intervals.
+
+Reproduce from a clean checkout with a fresh output directory:
+
+```powershell
+$env:MODELSIM_BIN = 'C:\intelFPGA\20.1\modelsim_ase\win32aloem'
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run_regression.ps1 -OutputDir C:\short\vga-run-unique -CaptureWave
+if ($LASTEXITCODE -ne 0) { throw 'VGA regression failed or blocked' }
+```
+
+UVM, SVA and covergroup capabilities were not qualified in this Starter
+simulator. No external SRAM, full video interface compliance, coverage
+closure, synthesis, timing, FPGA or hardware result is claimed.

@@ -1,0 +1,76 @@
+{
+  "repository": "VGA-SRAM-Framebuffer",
+  "source_revision": "bc29290c9e223325f82d23d2eebbc797a017609c",
+  "source_dirty": false,
+  "sources": [
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\vga\\rtl\\design.sv",
+      "sha256": "da2beee5959ada833898b20a2f13a181a325098e4c4d4d3d92e2e4ed76bfe4eb"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\vga\\tb\\tb_top.sv",
+      "sha256": "813623958422690ebf0752a66354d085686fa483eaf8c35daa570d55e87c7dca"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc\\vga\\tb\\vga_raster_test.sv",
+      "sha256": "ccb49cf3216231f4b65d16eb4f56e6f60bd49af8a3c3c068554b01a5938a7126"
+    }
+  ],
+  "seed": "exhaustive RGB332 0..255",
+  "timeout_seconds_per_command": 180,
+  "simulations": [
+    {
+      "top": "tb_vga_controller_sram",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "tb_vga_controller_sram",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# ALL VGA TESTS PASSED"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_RASTER_PASS checks=29588940 pixels=1232740 active=922318 hsync_low=147845 vsync_low=3201 frames=2 writes=258 invalid=2 resets=4 seed=all256"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "+WAVE_ONLY",
+        "-do",
+        "vcd file vga-raster.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_WAVE_PASS checks=21222 pixels=754"
+    }
+  ],
+  "overall": "PASS",
+  "simulator_version": "Model Technology ModelSim - INTEL FPGA STARTER EDITION vsim 2020.1 Simulator 2020.02 Feb 28 2020",
+  "waveform": {
+    "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-bc29290-clean-2026-11-07\\vga-raster.vcd",
+    "sha256": "9495d50025a207a22c42a6e9a843baf1b1f9fc9495124caccffbddd31f74df6c"
+  },
+  "elapsed_seconds": 53.119
+}

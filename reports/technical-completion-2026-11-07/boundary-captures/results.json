@@ -1,0 +1,186 @@
+{
+  "repository": "VGA-SRAM-Framebuffer",
+  "source_revision": "950026b022816b961df24c52e5186b051fca83f4",
+  "source_dirty": false,
+  "sources": [
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc-check\\vga-captures-remote\\rtl\\design.sv",
+      "sha256": "da2beee5959ada833898b20a2f13a181a325098e4c4d4d3d92e2e4ed76bfe4eb"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc-check\\vga-captures-remote\\tb\\tb_top.sv",
+      "sha256": "813623958422690ebf0752a66354d085686fa483eaf8c35daa570d55e87c7dca"
+    },
+    {
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\tc-check\\vga-captures-remote\\tb\\vga_raster_test.sv",
+      "sha256": "c7cb2ddf2532586f432e2d74f48ce99cfdff5ea53b4ab9046ed73a312c32d0e0"
+    }
+  ],
+  "seed": "exhaustive RGB332 0..255",
+  "timeout_seconds_per_command": 180,
+  "simulations": [
+    {
+      "top": "tb_vga_controller_sram",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "tb_vga_controller_sram",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# ALL VGA TESTS PASSED"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "-do",
+        "run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_RASTER_PASS checks=29588940 pixels=1232740 active=922318 hsync_low=147845 vsync_low=3201 frames=2 writes=258 invalid=2 resets=4 seed=all256"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "+WAVE_HORIZONTAL",
+        "-do",
+        "run -all; vcd file wave-horizontal.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; vcd add /vga_raster_test/rh; vcd add /vga_raster_test/rv; vcd add /vga_raster_test/rd; vcd add /vga_raster_test/frames; vcd add /vga_raster_test/dut/clock_divider; vcd add /vga_raster_test/dut/h_count; vcd add /vga_raster_test/dut/v_count; vcd add /vga_raster_test/dut/read_address; vcd add /vga_raster_test/dut/pixel_data; run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_WAVE_PASS mode=horizontal checks=21216"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "+WAVE_VERTICAL",
+        "-do",
+        "run -all; vcd file wave-vertical.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; vcd add /vga_raster_test/rh; vcd add /vga_raster_test/rv; vcd add /vga_raster_test/rd; vcd add /vga_raster_test/frames; vcd add /vga_raster_test/dut/clock_divider; vcd add /vga_raster_test/dut/h_count; vcd add /vga_raster_test/dut/v_count; vcd add /vga_raster_test/dut/read_address; vcd add /vga_raster_test/dut/pixel_data; run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_WAVE_PASS mode=vertical checks=9449616"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "+WAVE_WRITE",
+        "-do",
+        "run -all; vcd file wave-write.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; vcd add /vga_raster_test/rh; vcd add /vga_raster_test/rv; vcd add /vga_raster_test/rd; vcd add /vga_raster_test/frames; vcd add /vga_raster_test/dut/clock_divider; vcd add /vga_raster_test/dut/h_count; vcd add /vga_raster_test/dut/v_count; vcd add /vga_raster_test/dut/read_address; vcd add /vga_raster_test/dut/pixel_data; run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_WAVE_PASS mode=write checks=1854096"
+    },
+    {
+      "top": "vga_raster_test",
+      "command": [
+        "C:\\intelFPGA\\20.1\\modelsim_ase\\win32aloem\\vsim.exe",
+        "-c",
+        "-onfinish",
+        "exit",
+        "vga_raster_test",
+        "+WAVE_FRAME",
+        "-do",
+        "run -all; vcd file wave-frame.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; vcd add /vga_raster_test/rh; vcd add /vga_raster_test/rv; vcd add /vga_raster_test/rd; vcd add /vga_raster_test/frames; vcd add /vga_raster_test/dut/clock_divider; vcd add /vga_raster_test/dut/h_count; vcd add /vga_raster_test/dut/v_count; vcd add /vga_raster_test/dut/read_address; vcd add /vga_raster_test/dut/pixel_data; run -all; quit -code 0"
+      ],
+      "simulator_exit_code": 0,
+      "status": "PASS",
+      "marker": "# VGA_WAVE_PASS mode=frame checks=10083216"
+    }
+  ],
+  "overall": "PASS",
+  "simulator_version": "Model Technology ModelSim - INTEL FPGA STARTER EDITION vsim 2020.1 Simulator 2020.02 Feb 28 2020",
+  "waveforms": [
+    {
+      "mode": "horizontal",
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\wave-horizontal.vcd",
+      "sha256": "2c9fcf42ae1d04d7c7c5195e4e1d8e9511da69d9c24239d97a3c315c0e2cdc42",
+      "figures": [
+        {
+          "name": "horizontal-active",
+          "start_tick": 30725000,
+          "end_tick": 31525000,
+          "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\horizontal-active.svg"
+        },
+        {
+          "name": "horizontal-sync-end",
+          "start_tick": 35205000,
+          "end_tick": 35365000,
+          "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\horizontal-sync-end.svg"
+        }
+      ]
+    },
+    {
+      "mode": "vertical",
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\wave-vertical.vcd",
+      "sha256": "804d0f3e0f705d936e0b3f46f3c3e1395359f7e39be26176182bb936e84c9e12",
+      "figures": [
+        {
+          "name": "vertical-sync-start",
+          "start_tick": 15685085000,
+          "end_tick": 15685325000,
+          "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\vertical-sync-start.svg"
+        },
+        {
+          "name": "vertical-sync-end",
+          "start_tick": 15749085000,
+          "end_tick": 15749325000,
+          "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\vertical-sync-end.svg"
+        }
+      ]
+    },
+    {
+      "mode": "write",
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\wave-write.vcd",
+      "sha256": "e21bb2bb6ecce6915106cf48854836ce7538f8f5fe57aa4b12e269417a4a46db",
+      "figures": [
+        {
+          "name": "write",
+          "start_tick": 3089845000,
+          "end_tick": 3090165000,
+          "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\write.svg"
+        }
+      ]
+    },
+    {
+      "mode": "frame",
+      "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\wave-frame.vcd",
+      "sha256": "086730ade6e1868960c67cd424bcdd049b8f2b12e53502d183f6777db9d122b6",
+      "figures": [
+        {
+          "name": "frame",
+          "start_tick": 16805045000,
+          "end_tick": 16805365000,
+          "path": "C:\\R_MIGRATION_BACKUP\\Roohan_GitHub_Launch_Kit\\Roohan_GitHub_Launch_Kit\\build\\test-runs\\tc-vga-captures-remote-2026-11-07\\frame.svg"
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 160.61
+}

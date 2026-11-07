@@ -1,0 +1,16 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit vga_raster_test "+RESET_WRITE_EDGE" -do "run -all; quit -code 0" 
+# Start time: 02:50:54 on Nov 08,2026
+# Loading sv_std.std
+# Loading work.vga_raster_test
+# Loading work.vga_controller_sram
+# run -all
+# ** Fatal: VGA_RESET_WRITE_EARLY address=1000 model=5a dut=1c
+#    Time: 33 ns  Scope: vga_raster_test.stimulus File: C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc-check/vga-old-oracle-20261108/tb/vga_raster_test.sv Line: 108
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc-check/vga-old-oracle-20261108/tb/vga_raster_test.sv(108)
+#    Time: 33 ns  Iteration: 0  Instance: /vga_raster_test
+# End time: 02:50:54 on Nov 08,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

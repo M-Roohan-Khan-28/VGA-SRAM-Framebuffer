@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "origin": "simulator",
+  "source_filename": "wave-vertical.vcd",
+  "source_sha256": "12f8e4d346ba449ecb67a1563f796c0ebc4fee4c49c79a94709fc62c770516a8",
+  "timescale": "1ps",
+  "start_tick": 15749085000,
+  "end_tick": 15749325000,
+  "source_final_tick": 15749365000,
+  "signals": [
+    {
+      "name": "vga_raster_test.clk",
+      "code": "!",
+      "width": 1,
+      "kind": "reg",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.vsync",
+      "code": "'",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.active_video",
+      "code": "(",
+      "width": 1,
+      "kind": "wire",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.rh",
+      "code": "5",
+      "width": 32,
+      "kind": "integer",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.rv",
+      "code": "6",
+      "width": 32,
+      "kind": "integer",
+      "bit_range": ""
+    },
+    {
+      "name": "vga_raster_test.dut.clock_divider",
+      "code": "9",
+      "width": 2,
+      "kind": "reg",
+      "bit_range": "[1:0]"
+    },
+    {
+      "name": "vga_raster_test.dut.h_count",
+      "code": ":",
+      "width": 10,
+      "kind": "reg",
+      "bit_range": "[9:0]"
+    },
+    {
+      "name": "vga_raster_test.dut.v_count",
+      "code": ";",
+      "width": 10,
+      "kind": "reg",
+      "bit_range": "[9:0]"
+    }
+  ],
+  "same_tick_collapses": 0,
+  "functional_result": "NOT_ASSESSED_BY_RENDERER",
+  "capture_source_sha256": "804d0f3e0f705d936e0b3f46f3c3e1395359f7e39be26176182bb936e84c9e12",
+  "capture_source_representation": "original_simulator_capture_crlf",
+  "source_representation": "committed_git_blob_lf"
+}
