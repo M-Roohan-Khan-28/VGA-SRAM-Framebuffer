@@ -1,0 +1,42 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit vga_raster_test "+WAVE_HORIZONTAL" -do "run -all; vcd file wave-horizontal.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; vcd add /vga_raster_test/rh; vcd add /vga_raster_test/rv; vcd add /vga_raster_test/rd; vcd add /vga_raster_test/frames; vcd add /vga_raster_test/dut/clock_divider; vcd add /vga_raster_test/dut/h_count; vcd add /vga_raster_test/dut/v_count; vcd add /vga_raster_test/dut/read_address; vcd add /vga_raster_test/dut/pixel_data; run -all; quit -code 0" 
+# Start time: 23:57:41 on Nov 07,2026
+# Loading sv_std.std
+# Loading work.vga_raster_test
+# Loading work.vga_controller_sram
+# run -all
+# VGA_WAVE_ARM mode=horizontal frame=0 h=636 v=0
+# ** Note: $stop    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc-check/vga-captures-remote/tb/vga_raster_test.sv(105)
+#    Time: 30645 ns  Iteration: 2  Instance: /vga_raster_test
+# Break in NamedBeginStat stimulus at C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc-check/vga-captures-remote/tb/vga_raster_test.sv line 105
+# Stopped at C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc-check/vga-captures-remote/tb/vga_raster_test.sv line 105
+#  vcd file wave-horizontal.vcd
+#  vcd add /vga_raster_test/clk
+#  vcd add /vga_raster_test/reset
+#  vcd add /vga_raster_test/sram_we
+#  vcd add /vga_raster_test/sram_addr
+#  vcd add /vga_raster_test/sram_data_in
+#  vcd add /vga_raster_test/hsync
+#  vcd add /vga_raster_test/vsync
+#  vcd add /vga_raster_test/active_video
+#  vcd add /vga_raster_test/red
+#  vcd add /vga_raster_test/green
+#  vcd add /vga_raster_test/blue
+#  vcd add /vga_raster_test/rh
+#  vcd add /vga_raster_test/rv
+#  vcd add /vga_raster_test/rd
+#  vcd add /vga_raster_test/frames
+#  vcd add /vga_raster_test/dut/clock_divider
+#  vcd add /vga_raster_test/dut/h_count
+#  vcd add /vga_raster_test/dut/v_count
+#  vcd add /vga_raster_test/dut/read_address
+#  vcd add /vga_raster_test/dut/pixel_data
+#  run -all
+# VGA_WAVE_PASS mode=horizontal checks=21216
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc-check/vga-captures-remote/tb/vga_raster_test.sv(108)
+#    Time: 35365 ns  Iteration: 2  Instance: /vga_raster_test
+# End time: 23:57:44 on Nov 07,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0

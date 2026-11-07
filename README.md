@@ -7,13 +7,15 @@ A VGA timing and pixel-output design with an 80 × 60 RGB332 framebuffer scaled 
 The framebuffer is internal RTL storage. The retained simulation results do not establish external SRAM-interface compatibility or physical display operation.
 
 The corrected bounded contract ignores framebuffer write addresses 4800–8191.
-At tested source `bc29290c9e223325f82d23d2eebbc797a017609c`, the
+At tested source `950026b022816b961df24c52e5186b051fca83f4`, the
 [independent raster regression](docs/RESULTS.md) passed the preserved seven
 checks plus 29,588,940 public-pin comparisons over two complete frame wraps,
 including all 256 RGB332 values. Separate HSYNC and invalid-address faults
-produced nonzero wrapper exits. A [measured waveform](reports/technical-completion-2026-11-07/vga-raster.svg)
-and raw VCD record an early row and horizontal sync boundary; later VSYNC
-and frame wrap were checked by the oracle but are not in that short SVG.
+produced nonzero wrapper exits. Four measured boundary scenarios now show
+horizontal and vertical sync transitions, a framebuffer write through its
+first displayed pixel, and frame wrap. The [VCDs, six readable figures and
+reproduction details](docs/MEASURED_WAVEFORMS.md) accompany the checked run.
+The earlier short horizontal capture remains as historical evidence.
 See the [implemented specification](docs/SPECIFICATION.md).
 
 See [original source documentation](SOURCE_README.md) for the baseline files and the verification-status section below for the available evidence.

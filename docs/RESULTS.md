@@ -1,5 +1,21 @@
 # VGA raster results — 7 November 2026
 
+## Measured boundary follow-up
+
+Tested source/runner commit: `950026b022816b961df24c52e5186b051fca83f4`.
+The fresh GitHub branch clone passed the preserved seven-check bench and the
+two-frame independent oracle with 29,588,940 public-pin comparisons. Its four
+additional self-checking capture modes passed at horizontal boundaries,
+vertical boundaries, framebuffer write-to-pixel, and frame wrap. They produced
+four short raw VCDs and six readable measured figures. See the
+[capture guide](MEASURED_WAVEFORMS.md) and [raw run](../reports/technical-completion-2026-11-07/boundary-captures/).
+The full raster and wave modes each exited 0; their exact markers, tool
+version, VCD hashes and cropped time ranges are in the new JSON. The figures
+do not substitute for the independent oracle. Historical runs below remain
+unchanged.
+
+## Earlier raster qualification
+
 Tested source/runner commit: `bc29290c9e223325f82d23d2eebbc797a017609c`.
 ModelSim Intel FPGA Starter Edition `vsim 2020.1 Simulator 2020.02
 Feb 28 2020`. Deterministic input class: all 256 RGB332 byte values.

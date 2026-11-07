@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1501" viewBox="0 0 1440 1501">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text{font-family:DejaVu Sans,Arial,sans-serif} .signal{font-family:DejaVu Sans Mono,monospace;font-size:13px} .small{font-size:12px;fill:#475569}</style>
+<text x="26" y="31" font-size="21" fill="#0f172a">Measured framebuffer write through displayed pixel</text>
+<text x="26" y="54" font-size="13" fill="#92400e">VCD TRACE — check the accompanying simulation result</text>
+<text x="26" y="76" class="small">Time in VCD ticks; 1 tick = 1ps. Same-timestamp changes display their final value.</text>
+<path d="M370.00,105 V1434" stroke="#dbe3ed"/>
+<text x="370.00" y="99" text-anchor="middle" class="small">3.08984e+09</text>
+<path d="M496.25,105 V1434" stroke="#dbe3ed"/>
+<text x="496.25" y="99" text-anchor="middle" class="small">3.08988e+09</text>
+<path d="M622.50,105 V1434" stroke="#dbe3ed"/>
+<text x="622.50" y="99" text-anchor="middle" class="small">3.08992e+09</text>
+<path d="M748.75,105 V1434" stroke="#dbe3ed"/>
+<text x="748.75" y="99" text-anchor="middle" class="small">3.08996e+09</text>
+<path d="M875.00,105 V1434" stroke="#dbe3ed"/>
+<text x="875.00" y="99" text-anchor="middle" class="small">3.09e+09</text>
+<path d="M1001.25,105 V1434" stroke="#dbe3ed"/>
+<text x="1001.25" y="99" text-anchor="middle" class="small">3.09004e+09</text>
+<path d="M1127.50,105 V1434" stroke="#dbe3ed"/>
+<text x="1127.50" y="99" text-anchor="middle" class="small">3.09008e+09</text>
+<path d="M1253.75,105 V1434" stroke="#dbe3ed"/>
+<text x="1253.75" y="99" text-anchor="middle" class="small">3.09012e+09</text>
+<path d="M1380.00,105 V1434" stroke="#dbe3ed"/>
+<text x="1380.00" y="99" text-anchor="middle" class="small">3.09016e+09</text>
+<text x="26" y="135" class="signal"><title>vga_raster_test.clk</title>vga_raster_test.clk</text>
+<text x="26" y="151" class="small">1 bit</text>
+<path d="M370.00,122 H385.78" stroke="#0369a1" stroke-width="2"/>
+<path d="M385.78,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M385.78,150 H401.56" stroke="#0369a1" stroke-width="2"/>
+<path d="M401.56,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M401.56,122 H417.34" stroke="#0369a1" stroke-width="2"/>
+<path d="M417.34,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M417.34,150 H433.12" stroke="#0369a1" stroke-width="2"/>
+<path d="M433.12,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M433.12,122 H448.91" stroke="#0369a1" stroke-width="2"/>
+<path d="M448.91,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M448.91,150 H464.69" stroke="#0369a1" stroke-width="2"/>
+<path d="M464.69,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M464.69,122 H480.47" stroke="#0369a1" stroke-width="2"/>
+<path d="M480.47,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M480.47,150 H496.25" stroke="#0369a1" stroke-width="2"/>
+<path d="M496.25,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M496.25,122 H512.03" stroke="#0369a1" stroke-width="2"/>
+<path d="M512.03,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M512.03,150 H527.81" stroke="#0369a1" stroke-width="2"/>
+<path d="M527.81,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M527.81,122 H543.59" stroke="#0369a1" stroke-width="2"/>
+<path d="M543.59,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M543.59,150 H559.38" stroke="#0369a1" stroke-width="2"/>
+<path d="M559.38,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M559.38,122 H575.16" stroke="#0369a1" stroke-width="2"/>
+<path d="M575.16,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M575.16,150 H590.94" stroke="#0369a1" stroke-width="2"/>
+<path d="M590.94,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M590.94,122 H606.72" stroke="#0369a1" stroke-width="2"/>
+<path d="M606.72,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M606.72,150 H622.50" stroke="#0369a1" stroke-width="2"/>
+<path d="M622.50,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M622.50,122 H638.28" stroke="#0369a1" stroke-width="2"/>
+<path d="M638.28,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M638.28,150 H654.06" stroke="#0369a1" stroke-width="2"/>
+<path d="M654.06,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M654.06,122 H669.84" stroke="#0369a1" stroke-width="2"/>
+<path d="M669.84,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M669.84,150 H685.62" stroke="#0369a1" stroke-width="2"/>
+<path d="M685.62,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M685.62,122 H701.41" stroke="#0369a1" stroke-width="2"/>
+<path d="M701.41,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M701.41,150 H717.19" stroke="#0369a1" stroke-width="2"/>
+<path d="M717.19,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M717.19,122 H732.97" stroke="#0369a1" stroke-width="2"/>
+<path d="M732.97,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M732.97,150 H748.75" stroke="#0369a1" stroke-width="2"/>
+<path d="M748.75,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M748.75,122 H764.53" stroke="#0369a1" stroke-width="2"/>
+<path d="M764.53,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M764.53,150 H780.31" stroke="#0369a1" stroke-width="2"/>
+<path d="M780.31,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M780.31,122 H796.09" stroke="#0369a1" stroke-width="2"/>
+<path d="M796.09,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M796.09,150 H811.88" stroke="#0369a1" stroke-width="2"/>
+<path d="M811.88,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M811.88,122 H827.66" stroke="#0369a1" stroke-width="2"/>
+<path d="M827.66,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M827.66,150 H843.44" stroke="#0369a1" stroke-width="2"/>
+<path d="M843.44,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M843.44,122 H859.22" stroke="#0369a1" stroke-width="2"/>
+<path d="M859.22,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M859.22,150 H875.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,122 H890.78" stroke="#0369a1" stroke-width="2"/>
+<path d="M890.78,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M890.78,150 H906.56" stroke="#0369a1" stroke-width="2"/>
+<path d="M906.56,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M906.56,122 H922.34" stroke="#0369a1" stroke-width="2"/>
+<path d="M922.34,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M922.34,150 H938.12" stroke="#0369a1" stroke-width="2"/>
+<path d="M938.12,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M938.12,122 H953.91" stroke="#0369a1" stroke-width="2"/>
+<path d="M953.91,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M953.91,150 H969.69" stroke="#0369a1" stroke-width="2"/>
+<path d="M969.69,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M969.69,122 H985.47" stroke="#0369a1" stroke-width="2"/>
+<path d="M985.47,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M985.47,150 H1001.25" stroke="#0369a1" stroke-width="2"/>
+<path d="M1001.25,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1001.25,122 H1017.03" stroke="#0369a1" stroke-width="2"/>
+<path d="M1017.03,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1017.03,150 H1032.81" stroke="#0369a1" stroke-width="2"/>
+<path d="M1032.81,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1032.81,122 H1048.59" stroke="#0369a1" stroke-width="2"/>
+<path d="M1048.59,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1048.59,150 H1064.38" stroke="#0369a1" stroke-width="2"/>
+<path d="M1064.38,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1064.38,122 H1080.16" stroke="#0369a1" stroke-width="2"/>
+<path d="M1080.16,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1080.16,150 H1095.94" stroke="#0369a1" stroke-width="2"/>
+<path d="M1095.94,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1095.94,122 H1111.72" stroke="#0369a1" stroke-width="2"/>
+<path d="M1111.72,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1111.72,150 H1127.50" stroke="#0369a1" stroke-width="2"/>
+<path d="M1127.50,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1127.50,122 H1143.28" stroke="#0369a1" stroke-width="2"/>
+<path d="M1143.28,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1143.28,150 H1159.06" stroke="#0369a1" stroke-width="2"/>
+<path d="M1159.06,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1159.06,122 H1174.84" stroke="#0369a1" stroke-width="2"/>
+<path d="M1174.84,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1174.84,150 H1190.62" stroke="#0369a1" stroke-width="2"/>
+<path d="M1190.62,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1190.62,122 H1206.41" stroke="#0369a1" stroke-width="2"/>
+<path d="M1206.41,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1206.41,150 H1222.19" stroke="#0369a1" stroke-width="2"/>
+<path d="M1222.19,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1222.19,122 H1237.97" stroke="#0369a1" stroke-width="2"/>
+<path d="M1237.97,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1237.97,150 H1253.75" stroke="#0369a1" stroke-width="2"/>
+<path d="M1253.75,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1253.75,122 H1269.53" stroke="#0369a1" stroke-width="2"/>
+<path d="M1269.53,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1269.53,150 H1285.31" stroke="#0369a1" stroke-width="2"/>
+<path d="M1285.31,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1285.31,122 H1301.09" stroke="#0369a1" stroke-width="2"/>
+<path d="M1301.09,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1301.09,150 H1316.88" stroke="#0369a1" stroke-width="2"/>
+<path d="M1316.88,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1316.88,122 H1332.66" stroke="#0369a1" stroke-width="2"/>
+<path d="M1332.66,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1332.66,150 H1348.44" stroke="#0369a1" stroke-width="2"/>
+<path d="M1348.44,150 V122" stroke="#0369a1" stroke-width="2"/>
+<path d="M1348.44,122 H1364.22" stroke="#0369a1" stroke-width="2"/>
+<path d="M1364.22,122 V150" stroke="#0369a1" stroke-width="2"/>
+<path d="M1364.22,150 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,162 H1408" stroke="#e2e8f0"/>
+<text x="26" y="192" class="signal"><title>vga_raster_test.sram_we</title>vga_raster_test.sram_we</text>
+<text x="26" y="208" class="small">1 bit</text>
+<path d="M370.00,207 H385.78" stroke="#0369a1" stroke-width="2"/>
+<path d="M385.78,207 V179" stroke="#0369a1" stroke-width="2"/>
+<path d="M385.78,179 H417.34" stroke="#0369a1" stroke-width="2"/>
+<path d="M417.34,179 V207" stroke="#0369a1" stroke-width="2"/>
+<path d="M417.34,207 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,219 H1408" stroke="#e2e8f0"/>
+<text x="26" y="249" class="signal"><title>vga_raster_test.sram_addr</title>vga_raster_test.sram_addr</text>
+<text x="26" y="265" class="small">13 bit [12:0]</text>
+<polygon points="370.00,250 373.95,236 381.84,236 385.78,250 381.84,264 373.95,264" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>1111111111111</title></polygon>
+<polygon points="385.78,250 389.78,236 1376.00,236 1380.00,250 1376.00,264 389.78,264" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0001111101000</title></polygon>
+<text x="882.89" y="255" text-anchor="middle" class="signal" fill="#0369a1">0x03E8</text>
+<path d="M26,276 H1408" stroke="#e2e8f0"/>
+<text x="26" y="306" class="signal"><title>vga_raster_test.sram_data_in</title>vga_raster_test.sram_data_in</text>
+<text x="26" y="322" class="small">8 bit [7:0]</text>
+<polygon points="370.00,307 373.95,293 381.84,293 385.78,307 381.84,321 373.95,321" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>01100110</title></polygon>
+<polygon points="385.78,307 389.78,293 1376.00,293 1380.00,307 1376.00,321 389.78,321" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>01011010</title></polygon>
+<text x="882.89" y="312" text-anchor="middle" class="signal" fill="#0369a1">0x5A</text>
+<path d="M26,333 H1408" stroke="#e2e8f0"/>
+<text x="26" y="363" class="signal"><title>vga_raster_test.active_video</title>vga_raster_test.active_video</text>
+<text x="26" y="379" class="small">1 bit</text>
+<path d="M370.00,350 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,390 H1408" stroke="#e2e8f0"/>
+<text x="26" y="420" class="signal"><title>vga_raster_test.red[3]</title>vga_raster_test.red[3]</text>
+<text x="26" y="436" class="small">1 bit</text>
+<path d="M370.00,435 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,447 H1408" stroke="#e2e8f0"/>
+<text x="26" y="477" class="signal"><title>vga_raster_test.red[2]</title>vga_raster_test.red[2]</text>
+<text x="26" y="493" class="small">1 bit</text>
+<path d="M370.00,492 H875.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,492 V464" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,464 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,504 H1408" stroke="#e2e8f0"/>
+<text x="26" y="534" class="signal"><title>vga_raster_test.red[1]</title>vga_raster_test.red[1]</text>
+<text x="26" y="550" class="small">1 bit</text>
+<path d="M370.00,549 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,561 H1408" stroke="#e2e8f0"/>
+<text x="26" y="591" class="signal"><title>vga_raster_test.red[0]</title>vga_raster_test.red[0]</text>
+<text x="26" y="607" class="small">1 bit</text>
+<path d="M370.00,606 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,618 H1408" stroke="#e2e8f0"/>
+<text x="26" y="648" class="signal"><title>vga_raster_test.green[3]</title>vga_raster_test.green[3]</text>
+<text x="26" y="664" class="small">1 bit</text>
+<path d="M370.00,635 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,675 H1408" stroke="#e2e8f0"/>
+<text x="26" y="705" class="signal"><title>vga_raster_test.green[2]</title>vga_raster_test.green[2]</text>
+<text x="26" y="721" class="small">1 bit</text>
+<path d="M370.00,692 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,732 H1408" stroke="#e2e8f0"/>
+<text x="26" y="762" class="signal"><title>vga_raster_test.green[1]</title>vga_raster_test.green[1]</text>
+<text x="26" y="778" class="small">1 bit</text>
+<path d="M370.00,749 H875.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,749 V777" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,777 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,789 H1408" stroke="#e2e8f0"/>
+<text x="26" y="819" class="signal"><title>vga_raster_test.green[0]</title>vga_raster_test.green[0]</text>
+<text x="26" y="835" class="small">1 bit</text>
+<path d="M370.00,806 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,846 H1408" stroke="#e2e8f0"/>
+<text x="26" y="876" class="signal"><title>vga_raster_test.blue[3]</title>vga_raster_test.blue[3]</text>
+<text x="26" y="892" class="small">1 bit</text>
+<path d="M370.00,891 H875.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,891 V863" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,863 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,903 H1408" stroke="#e2e8f0"/>
+<text x="26" y="933" class="signal"><title>vga_raster_test.blue[2]</title>vga_raster_test.blue[2]</text>
+<text x="26" y="949" class="small">1 bit</text>
+<path d="M370.00,948 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,960 H1408" stroke="#e2e8f0"/>
+<text x="26" y="990" class="signal"><title>vga_raster_test.blue[1]</title>vga_raster_test.blue[1]</text>
+<text x="26" y="1006" class="small">1 bit</text>
+<path d="M370.00,1005 H875.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,1005 V977" stroke="#0369a1" stroke-width="2"/>
+<path d="M875.00,977 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,1017 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1047" class="signal"><title>vga_raster_test.blue[0]</title>vga_raster_test.blue[0]</text>
+<text x="26" y="1063" class="small">1 bit</text>
+<path d="M370.00,1062 H1380.00" stroke="#0369a1" stroke-width="2"/>
+<path d="M26,1074 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1104" class="signal"><title>vga_raster_test.rh</title>vga_raster_test.rh</text>
+<text x="26" y="1120" class="small">32 bit</text>
+<polygon points="370.00,1105 374.00,1091 492.25,1091 496.25,1105 492.25,1119 374.00,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000100111100</title></polygon>
+<text x="433.12" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x0000013C</text>
+<polygon points="496.25,1105 500.25,1091 618.50,1091 622.50,1105 618.50,1119 500.25,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000100111101</title></polygon>
+<text x="559.38" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x0000013D</text>
+<polygon points="622.50,1105 626.50,1091 744.75,1091 748.75,1105 744.75,1119 626.50,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000100111110</title></polygon>
+<text x="685.62" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x0000013E</text>
+<polygon points="748.75,1105 752.75,1091 871.00,1091 875.00,1105 871.00,1119 752.75,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000100111111</title></polygon>
+<text x="811.88" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x0000013F</text>
+<polygon points="875.00,1105 879.00,1091 997.25,1091 1001.25,1105 997.25,1119 879.00,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000101000000</title></polygon>
+<text x="938.12" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x00000140</text>
+<polygon points="1001.25,1105 1005.25,1091 1123.50,1091 1127.50,1105 1123.50,1119 1005.25,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000101000001</title></polygon>
+<text x="1064.38" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x00000141</text>
+<polygon points="1127.50,1105 1131.50,1091 1249.75,1091 1253.75,1105 1249.75,1119 1131.50,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000101000010</title></polygon>
+<text x="1190.62" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x00000142</text>
+<polygon points="1253.75,1105 1257.75,1091 1376.00,1091 1380.00,1105 1376.00,1119 1257.75,1119" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000101000011</title></polygon>
+<text x="1316.88" y="1110" text-anchor="middle" class="signal" fill="#0369a1">0x00000143</text>
+<path d="M26,1131 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1161" class="signal"><title>vga_raster_test.rv</title>vga_raster_test.rv</text>
+<text x="26" y="1177" class="small">32 bit</text>
+<polygon points="370.00,1162 374.00,1148 1376.00,1148 1380.00,1162 1376.00,1176 374.00,1176" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00000000000000000000000001100000</title></polygon>
+<text x="875.00" y="1167" text-anchor="middle" class="signal" fill="#0369a1">0x00000060</text>
+<path d="M26,1188 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1218" class="signal"><title>vga_raster_test.dut.h_count</title>vga_raster_test.dut.h_count</text>
+<text x="26" y="1234" class="small">10 bit [9:0]</text>
+<polygon points="370.00,1219 374.00,1205 492.25,1205 496.25,1219 492.25,1233 374.00,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0100111100</title></polygon>
+<text x="433.12" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x13C</text>
+<polygon points="496.25,1219 500.25,1205 618.50,1205 622.50,1219 618.50,1233 500.25,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0100111101</title></polygon>
+<text x="559.38" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x13D</text>
+<polygon points="622.50,1219 626.50,1205 744.75,1205 748.75,1219 744.75,1233 626.50,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0100111110</title></polygon>
+<text x="685.62" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x13E</text>
+<polygon points="748.75,1219 752.75,1205 871.00,1205 875.00,1219 871.00,1233 752.75,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0100111111</title></polygon>
+<text x="811.88" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x13F</text>
+<polygon points="875.00,1219 879.00,1205 997.25,1205 1001.25,1219 997.25,1233 879.00,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0101000000</title></polygon>
+<text x="938.12" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x140</text>
+<polygon points="1001.25,1219 1005.25,1205 1123.50,1205 1127.50,1219 1123.50,1233 1005.25,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0101000001</title></polygon>
+<text x="1064.38" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x141</text>
+<polygon points="1127.50,1219 1131.50,1205 1249.75,1205 1253.75,1219 1249.75,1233 1131.50,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0101000010</title></polygon>
+<text x="1190.62" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x142</text>
+<polygon points="1253.75,1219 1257.75,1205 1376.00,1205 1380.00,1219 1376.00,1233 1257.75,1233" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0101000011</title></polygon>
+<text x="1316.88" y="1224" text-anchor="middle" class="signal" fill="#0369a1">0x143</text>
+<path d="M26,1245 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1275" class="signal"><title>vga_raster_test.dut.v_count</title>vga_raster_test.dut.v_count</text>
+<text x="26" y="1291" class="small">10 bit [9:0]</text>
+<polygon points="370.00,1276 374.00,1262 1376.00,1262 1380.00,1276 1376.00,1290 374.00,1290" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0001100000</title></polygon>
+<text x="875.00" y="1281" text-anchor="middle" class="signal" fill="#0369a1">0x060</text>
+<path d="M26,1302 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1332" class="signal"><title>vga_raster_test.dut.read_address</title>vga_raster_test.dut.read_address</text>
+<text x="26" y="1348" class="small">13 bit [12:0]</text>
+<polygon points="370.00,1333 374.00,1319 871.00,1319 875.00,1333 871.00,1347 374.00,1347" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0001111100111</title></polygon>
+<text x="622.50" y="1338" text-anchor="middle" class="signal" fill="#0369a1">0x03E7</text>
+<polygon points="875.00,1333 879.00,1319 1376.00,1319 1380.00,1333 1376.00,1347 879.00,1347" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>0001111101000</title></polygon>
+<text x="1127.50" y="1338" text-anchor="middle" class="signal" fill="#0369a1">0x03E8</text>
+<path d="M26,1359 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1389" class="signal"><title>vga_raster_test.dut.pixel_data</title>vga_raster_test.dut.pixel_data</text>
+<text x="26" y="1405" class="small">8 bit [7:0]</text>
+<polygon points="370.00,1390 374.00,1376 871.00,1376 875.00,1390 871.00,1404 374.00,1404" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>00011100</title></polygon>
+<text x="622.50" y="1395" text-anchor="middle" class="signal" fill="#0369a1">0x1C</text>
+<polygon points="875.00,1390 879.00,1376 1376.00,1376 1380.00,1390 1376.00,1404 879.00,1404" fill="#fff" stroke="#0369a1" stroke-width="1.5"><title>01011010</title></polygon>
+<text x="1127.50" y="1395" text-anchor="middle" class="signal" fill="#0369a1">0x5A</text>
+<path d="M26,1416 H1408" stroke="#e2e8f0"/>
+<text x="26" y="1463" class="small">Source: wave-write.vcd | SHA-256: e21bb2bb6ecce6915106cf48854836ce7538f8f5fe57aa4b12e269417a4a46db</text>
+<text x="26" y="1484" class="small">A waveform is evidence of recorded signal values; it does not establish functional, protocol, or timing closure.</text>
+</svg>
