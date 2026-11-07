@@ -1,0 +1,8 @@
+{
+    "source_revision":  "bc29290c9e223325f82d23d2eebbc797a017609c",
+    "fault":  "range",
+    "mutant_sha256":  "995C2496A41F51182D0713228A36BE3810C5A21CCF2BA714FF83C911B2060261",
+    "wrapper_exit_code":  1,
+    "expected_mismatch_seen":  true,
+    "diagnostic":  "# ** Fatal: VGA_RASTER_MISMATCH frame=0 h=0 v=0 div=0 expected=111/000 observed=111/4b5"
+}

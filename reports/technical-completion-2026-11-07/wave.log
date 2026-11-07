@@ -1,0 +1,27 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit vga_raster_test "+WAVE_ONLY" -do "vcd file vga-raster.vcd; vcd add /vga_raster_test/clk; vcd add /vga_raster_test/reset; vcd add /vga_raster_test/sram_we; vcd add /vga_raster_test/sram_addr; vcd add /vga_raster_test/sram_data_in; vcd add /vga_raster_test/hsync; vcd add /vga_raster_test/vsync; vcd add /vga_raster_test/active_video; vcd add /vga_raster_test/red; vcd add /vga_raster_test/green; vcd add /vga_raster_test/blue; run -all; quit -code 0" 
+# Start time: 21:54:47 on Nov 07,2026
+# Loading sv_std.std
+# Loading work.vga_raster_test
+# Loading work.vga_controller_sram
+# vcd file vga-raster.vcd
+#  vcd add /vga_raster_test/clk
+#  vcd add /vga_raster_test/reset
+#  vcd add /vga_raster_test/sram_we
+#  vcd add /vga_raster_test/sram_addr
+#  vcd add /vga_raster_test/sram_data_in
+#  vcd add /vga_raster_test/hsync
+#  vcd add /vga_raster_test/vsync
+#  vcd add /vga_raster_test/active_video
+#  vcd add /vga_raster_test/red
+#  vcd add /vga_raster_test/green
+#  vcd add /vga_raster_test/blue
+#  run -all
+# VGA_WAVE_PASS checks=21222 pixels=754
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/vga/tb/vga_raster_test.sv(106)
+#    Time: 35367 ns  Iteration: 0  Instance: /vga_raster_test
+# End time: 21:54:47 on Nov 07,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

@@ -6,21 +6,37 @@ A VGA timing and pixel-output design with an 80 × 60 RGB332 framebuffer scaled 
 
 The framebuffer is internal RTL storage. The retained simulation results do not establish external SRAM-interface compatibility or physical display operation.
 
+The corrected bounded contract ignores framebuffer write addresses 4800–8191.
+At tested source `bc29290c9e223325f82d23d2eebbc797a017609c`, the
+[independent raster regression](docs/RESULTS.md) passed the preserved seven
+checks plus 29,588,940 public-pin comparisons over two complete frame wraps,
+including all 256 RGB332 values. Separate HSYNC and invalid-address faults
+produced nonzero wrapper exits. A [measured waveform](reports/technical-completion-2026-11-07/vga-raster.svg)
+and raw VCD record an early row and horizontal sync boundary; later VSYNC
+and frame wrap were checked by the oracle but are not in that short SVG.
+See the [implemented specification](docs/SPECIFICATION.md).
+
 See [original source documentation](SOURCE_README.md) for the baseline files and the verification-status section below for the available evidence.
 
 ## Run
 
-From the repository root, with the required ModelSim/Questa executables and appropriate licence available:
+From the repository root, with ModelSim/Questa executables and Python 3:
 
-```bash
-bash sim/run.sh
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/run_regression.ps1 -OutputDir C:\short\vga-run-unique -CaptureWave
 ```
 
-Existing Windows instructions, where supplied, are retained in `scripts/`. Do not assume the testbench will run in every edition of a simulator. Check [the retained validation report](source-docs/VALIDATION.md) and the original README.
+Choose a new output directory for each run. The original `sim/run.sh` and
+`scripts/run_sim.ps1` remain historical entry points. Check
+[the retained validation report](source-docs/VALIDATION.md) and original
+README for the baseline.
 
 ## Verification status
 
-The included logs are historical evidence copied from the source repository. **The extracted copy has not been simulated by this extraction script.** Re-run before reporting fresh results. Some original exercises were blocked by verification-feature licence restrictions; those restrictions are not changed by packaging.
+The original `reports/` logs are historical extraction evidence. New executed
+results are under `reports/technical-completion-2026-11-07/`. The installed
+Starter simulator did not qualify licensed UVM, SVA or covergroups. No
+coverage, synthesis, timing, FPGA or hardware result is claimed.
 
 ## Provenance and changes
 

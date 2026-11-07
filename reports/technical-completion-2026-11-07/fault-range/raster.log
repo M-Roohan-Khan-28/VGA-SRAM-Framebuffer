@@ -1,0 +1,16 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit vga_raster_test -do "run -all; quit -code 0" 
+# Start time: 21:53:46 on Nov 07,2026
+# Loading sv_std.std
+# Loading work.vga_raster_test
+# Loading work.vga_controller_sram
+# run -all
+# ** Fatal: VGA_RASTER_MISMATCH frame=0 h=0 v=0 div=0 expected=111/000 observed=111/4b5
+#    Time: 5156 ns  Scope: vga_raster_test.model File: C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/vga/tb/vga_raster_test.sv Line: 69
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/vga/tb/vga_raster_test.sv(69)
+#    Time: 5156 ns  Iteration: 0  Instance: /vga_raster_test
+# End time: 21:53:46 on Nov 07,2026, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0

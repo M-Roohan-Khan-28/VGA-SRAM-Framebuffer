@@ -1,0 +1,26 @@
+Reading pref.tcl
+
+# 2020.1
+
+# vsim -c -onfinish exit tb_vga_controller_sram -do "run -all; quit -code 0" 
+# Start time: 21:53:57 on Nov 07,2026
+# Loading sv_std.std
+# Loading work.tb_vga_controller_sram
+# Loading work.vga_controller_sram
+# run -all
+# PASS: HSYNC becomes active-low at pixel 656
+# PASS: HSYNC returns high at pixel 752
+# PASS: Visible SRAM background pixel is displayed
+# PASS: Unique DIL signature pixel is read from SRAM
+# PASS: SRAM write port updates a framebuffer location
+# PASS: VSYNC becomes active-low at line 490
+# PASS: VSYNC returns high at line 492
+# ------------------------------------------
+# TOTAL PASSED = 7
+# TOTAL FAILED = 0
+# ------------------------------------------
+# ALL VGA TESTS PASSED
+# ** Note: $finish    : C:/R_MIGRATION_BACKUP/Roohan_GitHub_Launch_Kit/Roohan_GitHub_Launch_Kit/build/tc/vga/tb/tb_top.sv(123)
+#    Time: 15744046 ns  Iteration: 0  Instance: /tb_vga_controller_sram
+# End time: 21:54:28 on Nov 07,2026, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 0
