@@ -40,6 +40,8 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--rtl", type=Path, help="disposable source override")
     parser.add_argument("--capture-wave", action="store_true")
+    parser.add_argument("--raster-only", action="store_true",
+                        help="fault qualification: run only the independent raster oracle")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     out = args.output_dir.resolve()
@@ -76,6 +78,8 @@ def main():
             ("raster", "vga_raster_test", [],
              "VGA_RASTER_PASS checks=", r"frames=2 writes=258 invalid=2 resets=4 seed=all256"),
         ]
+        if args.raster_only:
+            cases = cases[1:]
         if args.capture_wave:
             cases.append(("wave", "vga_raster_test", ["+WAVE_ONLY"],
                           "VGA_WAVE_PASS checks=", r"pixels=754"))
