@@ -12,6 +12,15 @@ import sys
 import time
 
 
+def observed_tick(trace, signal, value):
+    """Locate a measured model-coordinate transition in the simulator VCD."""
+    code = trace.signals["vga_raster_test." + signal].code
+    for tick, bits in trace.events[code]:
+        if "x" not in bits.lower() and "z" not in bits.lower() and int(bits, 2) == value:
+            return tick
+    raise RuntimeError("VCD coordinate not observed: %s=%d" % (signal, value))
+
+
 def tool(name):
     prefix = os.environ.get("MODELSIM_BIN")
     choices = ([str(Path(prefix) / (name + ".exe")), str(Path(prefix) / name)]
@@ -80,15 +89,21 @@ def main():
         ]
         if args.raster_only:
             cases = cases[1:]
+        wave_modes = ("horizontal", "vertical", "write", "frame")
         if args.capture_wave:
-            cases.append(("wave", "vga_raster_test", ["+WAVE_ONLY"],
-                          "VGA_WAVE_PASS checks=", r"pixels=754"))
+            for mode in wave_modes:
+                cases.append(("wave-" + mode, "vga_raster_test",
+                              ["+WAVE_" + mode.upper()],
+                              "VGA_WAVE_PASS mode=" + mode + " checks=", r"checks=\d+"))
         for label, top, extra, marker, detail in cases:
             do = "run -all; quit -code 0"
-            if label == "wave":
-                pins = "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red green blue".split()
-                do = ("vcd file vga-raster.vcd; " + "; ".join(
-                    "vcd add /vga_raster_test/" + pin for pin in pins) + "; " + do)
+            if label.startswith("wave-"):
+                pins = "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red green blue rh rv rd frames".split()
+                private = "clock_divider h_count v_count read_address pixel_data".split()
+                do = ("run -all; vcd file " + label + ".vcd; " + "; ".join(
+                    ["vcd add /vga_raster_test/" + pin for pin in pins] +
+                    ["vcd add /vga_raster_test/dut/" + pin for pin in private]) +
+                    "; run -all; quit -code 0")
             argv = [vsim, "-c", "-onfinish", "exit", top, *extra, "-do", do]
             code, log = invoke(argv, out, out / (label + ".log"))
             item = {"top": top, "command": argv, "simulator_exit_code": code,
@@ -99,23 +114,61 @@ def main():
                     len(re.findall(re.escape(marker), log)) != 1 or
                     not re.search(detail, log)):
                 raise RuntimeError(label + " failed or marker/count missing")
+            if label.startswith("wave-") and len(re.findall(
+                    re.escape("VGA_WAVE_ARM mode=" + label[5:]), log)) != 1:
+                raise RuntimeError(label + " did not stop at the requested boundary")
             item["status"] = "PASS"
             item["marker"] = next(line for line in log.splitlines() if marker in line)
             print("PASS " + item["marker"])
         if args.capture_wave:
-            vcd = out / "vga-raster.vcd"
-            if not vcd.is_file() or not vcd.stat().st_size:
-                raise RuntimeError("Requested VCD missing")
-            report["waveform"] = {"path": str(vcd),
-                                  "sha256": hashlib.sha256(vcd.read_bytes()).hexdigest()}
+            report["waveforms"] = []
             signals = ["vga_raster_test." + p for p in
-                       "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red* green* blue*".split()]
-            render = [sys.executable, str(root / "tools/vcd_to_svg.py"),
-                      "--vcd", str(vcd), "--signals", *signals,
-                      "--output", str(out / "vga-raster.svg"),
-                      "--origin", "simulator", "--title", "Measured VGA row and HSYNC boundary"]
-            if invoke(render, out, out / "render.log")[0]:
-                raise RuntimeError("VCD rendering failed")
+                       "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red* green* blue* rh rv rd frames".split()]
+            signals += ["vga_raster_test.dut." + p for p in
+                        "clock_divider h_count v_count read_address pixel_data".split()]
+            titles = {
+                "horizontal": "Measured VGA visible row and HSYNC boundaries",
+                "vertical": "Measured VGA vertical blank and VSYNC boundaries",
+                "write": "Measured framebuffer write through displayed pixel",
+                "frame": "Measured VGA frame wrap",
+            }
+            for mode in wave_modes:
+                label = "wave-" + mode
+                vcd = out / (label + ".vcd")
+                if not vcd.is_file() or not vcd.stat().st_size:
+                    raise RuntimeError(label + " VCD missing")
+                report["waveforms"].append({"mode": mode, "path": str(vcd),
+                                             "sha256": hashlib.sha256(vcd.read_bytes()).hexdigest()})
+                sys.path.insert(0, str(root / "tools"))
+                from vcd_to_svg import parse_vcd
+                trace = parse_vcd(vcd)
+                windows = [(mode, trace.events[next(iter(trace.events))][0][0], trace.last_tick)]
+                if mode == "horizontal":
+                    windows = [
+                        ("horizontal-active", observed_tick(trace, "rh", 638),
+                         observed_tick(trace, "rh", 658)),
+                        ("horizontal-sync-end", observed_tick(trace, "rh", 750),
+                         observed_tick(trace, "rh", 754)),
+                    ]
+                elif mode == "vertical":
+                    windows = []
+                    for name, line in (("vertical-sync-start", 490),
+                                       ("vertical-sync-end", 492)):
+                        tick = observed_tick(trace, "rv", line)
+                        windows.append((name, tick - 120000, tick + 120000))
+                for name, start, end in windows:
+                    if start < 0 or end > trace.last_tick or start >= end:
+                        raise RuntimeError(name + " measured VCD window invalid")
+                    render = [sys.executable, str(root / "tools/vcd_to_svg.py"),
+                              "--vcd", str(vcd), "--signals", *signals,
+                              "--start", str(start), "--end", str(end),
+                              "--output", str(out / (name + ".svg")),
+                              "--origin", "simulator", "--title", titles[mode]]
+                    if invoke(render, out, out / ("render-" + name + ".log"))[0]:
+                        raise RuntimeError(name + " VCD rendering failed")
+                    report["waveforms"][-1].setdefault("figures", []).append(
+                        {"name": name, "start_tick": start, "end_tick": end,
+                         "path": str(out / (name + ".svg"))})
         report["overall"] = "PASS"
     except Exception as exc:
         report["error"] = str(exc)

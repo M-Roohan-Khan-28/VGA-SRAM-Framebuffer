@@ -99,6 +99,41 @@ module vga_raster_test;
     write_at(4800,8'h55);
     write_at(8191,8'h66);
     pulse_reset();
+    if($test$plusargs("WAVE_HORIZONTAL")) begin
+      wait(rv==0 && rh==636 && rd==0);
+      $display("VGA_WAVE_ARM mode=horizontal frame=%0d h=%0d v=%0d",frames,rh,rv);
+      $stop;
+      wait(rv==0 && rh>=754 && rd==0);
+      $display("VGA_WAVE_PASS mode=horizontal checks=%0d",checks);
+      $finish;
+    end
+    // A paused simulator can arm a small measured VCD at the requested
+    // boundary. The public-pin oracle remains active before and after pause.
+    if($test$plusargs("WAVE_VERTICAL")) begin
+      wait(rv==489 && rh==796 && rd==0);
+      $display("VGA_WAVE_ARM mode=vertical frame=%0d h=%0d v=%0d",frames,rh,rv);
+      $stop;
+      wait(rv==492 && rh>=4 && rd==0);
+      $display("VGA_WAVE_PASS mode=vertical checks=%0d",checks);
+      $finish;
+    end
+    if($test$plusargs("WAVE_WRITE")) begin
+      wait(rv==96 && rh==316 && rd==0);
+      $display("VGA_WAVE_ARM mode=write frame=%0d h=%0d v=%0d",frames,rh,rv);
+      $stop;
+      write_at(1000,8'h5a);
+      wait(rv==96 && rh>=324 && rd==0);
+      $display("VGA_WAVE_PASS mode=write checks=%0d",checks);
+      $finish;
+    end
+    if($test$plusargs("WAVE_FRAME")) begin
+      wait(rv==524 && rh==796 && rd==0);
+      $display("VGA_WAVE_ARM mode=frame frame=%0d h=%0d v=%0d",frames,rh,rv);
+      $stop;
+      wait(frames>=1 && rv==0 && rh>=4 && rd==0);
+      $display("VGA_WAVE_PASS mode=frame checks=%0d",checks);
+      $finish;
+    end
     if($test$plusargs("WAVE_ONLY")) begin
       wait(rv==0 && rh>=754);
       #2;

@@ -4,4 +4,6 @@
 **/modelsim.ini
 **/*.ucdb
 **/*.vcd
+**/__pycache__/
+**/*.pyc
 
