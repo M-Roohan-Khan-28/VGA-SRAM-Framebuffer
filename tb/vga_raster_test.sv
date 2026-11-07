@@ -12,6 +12,7 @@ module vga_raster_test;
   bit seen_color[0:255];
   int rh=0,rv=0,rd=0,frames=0,checks=0,pixels=0,writes=0,invalid=0;
   int hsync_low=0,vsync_low=0,active_pixels=0,resets=0;
+  int reset_write_checks=0;
 
   function automatic logic [7:0] initial_pixel(input int xx,input int yy);
     logic [7:0] pixel;
@@ -35,6 +36,14 @@ module vga_raster_test;
     for(int c=0;c<256;c++) seen_color[c]=0;
   end
 
+  // Framebuffer writes are clocked even while raster reset is asserted.
+  always @(posedge clk) begin : reference_write
+    if(sram_we) begin
+      if(sram_addr<4800) begin reference_fb[sram_addr]=sram_data_in; writes++; end
+      else invalid++;
+    end
+  end
+
   // Reference follows public input clocks, never DUT private counters.
   always @(posedge clk or posedge reset) begin : model
     logic [7:0] pixel;
@@ -52,10 +61,9 @@ module vga_raster_test;
         end else rh++;
       end else rd++;
     end
-    if(sram_we) begin
-      if(sram_addr<4800) begin reference_fb[sram_addr]=sram_data_in; writes++; end
-      else invalid++;
-    end
+    // Allow the clocked reference write and the DUT's nonblocking updates to
+    // settle before deriving the expected displayed pixel.
+    #1;
     ea=(rh<640 && rv<480);
     eh=!(rh>=656 && rh<752);
     ev=!(rv>=490 && rv<492);
@@ -64,7 +72,6 @@ module vga_raster_test;
     er={pixel[7:5],pixel[7]};
     eg={pixel[4:2],pixel[4]};
     eb={pixel[1:0],pixel[1:0]};
-    #1;
     if({hsync,vsync,active_video,red,green,blue} !== {eh,ev,ea,er,eg,eb})
       $fatal(1,"VGA_RASTER_MISMATCH frame=%0d h=%0d v=%0d div=%0d expected=%b%b%b/%h%h%h observed=%b%b%b/%h%h%h",
           frames,rh,rv,rd,eh,ev,ea,er,eg,eb,hsync,vsync,active_video,red,green,blue);
@@ -92,6 +99,40 @@ module vga_raster_test;
   endtask
 
   initial begin : stimulus
+    if($test$plusargs("RESET_WRITE_EDGE")) begin
+      // Raise reset between clocks with a write pending. The DUT's clocked
+      // SRAM must retain its old byte until a real rising clock edge.
+      repeat(2) @(posedge clk);
+      @(negedge clk); reset=0;
+      @(negedge clk); sram_addr=13'd1000; sram_data_in=8'h5a; sram_we=1;
+      #2 reset=1;
+      #1;
+      if(reference_fb[1000] !== initial_pixel(40,12) ||
+         dut.sram[1000] !== initial_pixel(40,12))
+        $fatal(1,"VGA_RESET_WRITE_EARLY address=1000 model=%h dut=%h",
+               reference_fb[1000],dut.sram[1000]);
+      reset_write_checks+=2;
+      @(posedge clk); #2;
+      if(reference_fb[1000] !== 8'h5a || dut.sram[1000] !== 8'h5a)
+        $fatal(1,"VGA_RESET_WRITE_MISSING address=1000 model=%h dut=%h",
+               reference_fb[1000],dut.sram[1000]);
+      reset_write_checks+=2;
+      @(negedge clk); sram_addr=13'd1001; sram_data_in=8'ha6;
+      #2;
+      if(reference_fb[1001] !== initial_pixel(41,12) ||
+         dut.sram[1001] !== initial_pixel(41,12))
+        $fatal(1,"VGA_RESET_WRITE_EARLY address=1001 model=%h dut=%h",
+               reference_fb[1001],dut.sram[1001]);
+      reset_write_checks+=2;
+      @(posedge clk); #2;
+      if(reference_fb[1001] !== 8'ha6 || dut.sram[1001] !== 8'ha6)
+        $fatal(1,"VGA_RESET_WRITE_MISSING address=1001 model=%h dut=%h",
+               reference_fb[1001],dut.sram[1001]);
+      reset_write_checks+=2;
+      @(negedge clk); sram_we=0;
+      $display("VGA_RESET_WRITE_EDGE_PASS checks=%0d reset_held=1",reset_write_checks);
+      $finish;
+    end
     // Writes while raster reset is held must persist. Every RGB332 byte is
     // installed in a visible top-row cell and scored through display pins.
     for(int c=0;c<256;c++) write_at(c,c[7:0]);

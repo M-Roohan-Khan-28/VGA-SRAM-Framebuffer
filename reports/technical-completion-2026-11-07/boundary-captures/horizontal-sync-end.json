@@ -2,7 +2,7 @@
   "schema_version": 1,
   "origin": "simulator",
   "source_filename": "wave-horizontal.vcd",
-  "source_sha256": "2c9fcf42ae1d04d7c7c5195e4e1d8e9511da69d9c24239d97a3c315c0e2cdc42",
+  "source_sha256": "ad1b27eab7330dc235f7c2be9f97bce248aec95b497f347846bbc777dc4eeb05",
   "timescale": "1ps",
   "start_tick": 35205000,
   "end_tick": 35365000,
@@ -157,5 +157,8 @@
     }
   ],
   "same_tick_collapses": 0,
-  "functional_result": "NOT_ASSESSED_BY_RENDERER"
+  "functional_result": "NOT_ASSESSED_BY_RENDERER",
+  "capture_source_sha256": "2c9fcf42ae1d04d7c7c5195e4e1d8e9511da69d9c24239d97a3c315c0e2cdc42",
+  "capture_source_representation": "original_simulator_capture_crlf",
+  "source_representation": "committed_git_blob_lf"
 }

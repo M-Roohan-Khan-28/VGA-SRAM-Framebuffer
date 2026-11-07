@@ -51,6 +51,8 @@ def main():
     parser.add_argument("--capture-wave", action="store_true")
     parser.add_argument("--raster-only", action="store_true",
                         help="fault qualification: run only the independent raster oracle")
+    parser.add_argument("--reset-write-only", action="store_true",
+                        help="run only the asynchronous-reset pending-write qualification")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     out = args.output_dir.resolve()
@@ -84,11 +86,15 @@ def main():
         cases = [
             ("legacy", "tb_vga_controller_sram", [],
              "ALL VGA TESTS PASSED", r"TOTAL PASSED = 7"),
+            ("reset-write-edge", "vga_raster_test", ["+RESET_WRITE_EDGE"],
+             "VGA_RESET_WRITE_EDGE_PASS checks=8 reset_held=1", r"reset_held=1"),
             ("raster", "vga_raster_test", [],
              "VGA_RASTER_PASS checks=", r"frames=2 writes=258 invalid=2 resets=4 seed=all256"),
         ]
-        if args.raster_only:
-            cases = cases[1:]
+        if args.reset_write_only:
+            cases = cases[1:2]
+        elif args.raster_only:
+            cases = cases[2:]
         wave_modes = ("horizontal", "vertical", "write", "frame")
         if args.capture_wave:
             for mode in wave_modes:

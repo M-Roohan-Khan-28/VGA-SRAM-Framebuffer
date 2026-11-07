@@ -1,5 +1,12 @@
 # Measured VGA boundary captures
 
+**Byte provenance for the figures below:** Each SVG was rendered from the
+original CRLF simulator capture. The adjacent figure JSON now identifies
+`capture_source_sha256` for that capture and `source_sha256` for the LF Git VCD
+blob linked here. The [portfolio byte audit](https://github.com/M-Roohan-Khan-28/AMBA-Protocol-Verification/blob/technical/response-order-qualification/reports/technical-release-2026-11-08/waveform-byte-audit.json)
+maps both representations. Newline conversion does not alter VCD events or
+the simulation result.
+
 These are simulator VCD captures from the independently checked
 `vga_raster_test` at tested source `950026b022816b961df24c52e5186b051fca83f4`.
 The source is the public GitHub technical branch, cloned into a clean worktree
