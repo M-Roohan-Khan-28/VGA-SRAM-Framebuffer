@@ -18,6 +18,13 @@ reproduction details](docs/MEASURED_WAVEFORMS.md) accompany the checked run.
 The earlier short horizontal capture remains as historical evidence.
 See the [implemented specification](docs/SPECIFICATION.md).
 
+The 8 November release corrected the reference framebuffer's reset-edge
+write handling and added eight bounded pending-write temporal checks. A clean
+detached clone passed those checks alongside the seven original checks and
+29,588,940 raster pin comparisons. The disposable old-oracle control failed
+as expected; [raw logs and byte provenance](docs/RESULTS.md) are separate
+from the earlier reports.
+
 See [original source documentation](SOURCE_README.md) for the baseline files and the verification-status section below for the available evidence.
 
 ## Run

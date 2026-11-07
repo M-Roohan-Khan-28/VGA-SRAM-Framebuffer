@@ -1,4 +1,29 @@
-# VGA raster results — 7 November 2026
+# VGA raster results — 8 November 2026
+
+## Reset-edge oracle correction
+
+At source commit `e790d1f1caf0f8650352a251465b214a66159a36`, the
+reference framebuffer writes only on `posedge clk`, matching the DUT even
+while raster reset is asserted. Expected video pins are sampled after the
+clocked reference write and DUT nonblocking updates settle. A bounded
+reset-between-clocks test checks two addresses before their write clock edges
+and after those edges while reset remains high: **8 temporal checks**, exit 0.
+
+The [clean detached GitHub clone run](../reports/technical-release-2026-11-08/clean-clone/)
+passed the preserved 7-check bench, the new 8-check reset test, and the
+two-frame oracle's **29,588,940 public-pin comparisons**; wrapper exit 0.
+ModelSim Intel FPGA Starter Edition reported
+`vsim 2020.1 Simulator 2020.02 Feb 28 2020`. The clean source revision and
+individual simulation exits are in `results.json`. The
+[disposable old-oracle control](../reports/technical-release-2026-11-08/old-oracle-control/)
+failed at 33 ns with `VGA_RESET_WRITE_EARLY`: the reference had `5a`, while
+the DUT retained `1c` until a clock. The wrapper exited 1. Its mutant bench
+and raw failure log are retained separately; no RTL was changed.
+
+The earlier waveform captures and result records below remain historical.
+The [byte provenance guide](MEASURED_WAVEFORMS.md) distinguishes original
+CRLF capture hashes from committed LF VCD hashes. Newline conversion did not
+change the simulation event sequence.
 
 ## Measured boundary follow-up
 
