@@ -122,10 +122,16 @@ def main():
             print("PASS " + item["marker"])
         if args.capture_wave:
             report["waveforms"] = []
-            signals = ["vga_raster_test." + p for p in
-                       "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red* green* blue* rh rv rd frames".split()]
-            signals += ["vga_raster_test.dut." + p for p in
-                        "clock_divider h_count v_count read_address pixel_data".split()]
+            selected = {
+                "horizontal": ("clk hsync active_video red* green* blue* rh rv",
+                               "clock_divider h_count v_count pixel_data"),
+                "vertical": ("clk vsync active_video rh rv",
+                             "clock_divider h_count v_count"),
+                "write": ("clk sram_we sram_addr sram_data_in active_video red* green* blue* rh rv",
+                          "h_count v_count read_address pixel_data"),
+                "frame": ("clk hsync vsync active_video red* green* blue* rh rv frames",
+                          "clock_divider h_count v_count"),
+            }
             titles = {
                 "horizontal": "Measured VGA visible row and HSYNC boundaries",
                 "vertical": "Measured VGA vertical blank and VSYNC boundaries",
@@ -142,6 +148,9 @@ def main():
                 sys.path.insert(0, str(root / "tools"))
                 from vcd_to_svg import parse_vcd
                 trace = parse_vcd(vcd)
+                public, private = selected[mode]
+                signals = ["vga_raster_test." + p for p in public.split()]
+                signals += ["vga_raster_test.dut." + p for p in private.split()]
                 windows = [(mode, trace.events[next(iter(trace.events))][0][0], trace.last_tick)]
                 if mode == "horizontal":
                     windows = [
