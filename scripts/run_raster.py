@@ -105,7 +105,7 @@ def main():
             report["waveform"] = {"path": str(vcd),
                                   "sha256": hashlib.sha256(vcd.read_bytes()).hexdigest()}
             signals = ["vga_raster_test." + p for p in
-                       "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red green blue".split()]
+                       "clk reset sram_we sram_addr sram_data_in hsync vsync active_video red* green* blue*".split()]
             render = [sys.executable, str(root / "tools/vcd_to_svg.py"),
                       "--vcd", str(vcd), "--signals", *signals,
                       "--output", str(out / "vga-raster.svg"),
