@@ -42,10 +42,12 @@ README for the baseline.
 
 ## Verification status
 
-The original `reports/` logs are historical extraction evidence. New executed
-results are under `reports/technical-completion-2026-11-07/`. The installed
-Starter simulator did not qualify licensed UVM, SVA or covergroups. No
-coverage, synthesis, timing, FPGA or hardware result is claimed.
+The original `reports/` logs are historical extraction evidence. The 7 November
+Starter capability statements belong to that earlier tool configuration, which
+did not qualify UVM/SVA/covergroups. A separate Questa 2025.2 configuration has
+now executed the deterministic UVM/SVA review milestone linked below. Functional
+coverage and constrained randomization remain NOT RUN. Synthesis, timing, FPGA
+and hardware results remain separate.
 
 ## Provenance and changes
 
@@ -56,3 +58,16 @@ Source commit: `df8d6f66898a08df75cd2071ddac7bbba9ba9b16`. Source path: `project
 ## Next engineering work
 
 Planned checks will cover complete frame timing, synchronization widths, blanking, framebuffer address bounds, and pixel-write/readback behaviour. Board timing and physical display results will require a defined FPGA target.
+
+## Separate deterministic UVM/SVA review milestone
+
+The [AMBA-hosted adapter and reproduction guide](docs/DETERMINISTIC_VGA_UVM.md)
+links a fresh detached `37/37` required PASS, actual wrapper/aggregate
+exits 0, 30 principal scenarios, 8,622,612 observations /
+51,735,672 comparisons, 14 fault parents and 49 runner fixtures.
+The RTL remains locked to `8e257d11b1964fe82d4d4f3c3192b6a315d3b93d`. [Raw evidence, measured waveforms and
+simulation-reconstructed frame](https://github.com/M-Roohan-Khan-28/AMBA-Protocol-Verification/blob/4ca72a17e0dca3ffed9edf5b65ffa025ee8740af/reports/vga-uvm-2026-11-11/SUMMARY.md) identify actual pins and bytes.
+This is an open review package; previous main/release results above remain
+historical. Functional coverage, randomization and original advanced ALU/APB
+remain **NOT RUN**. No external SRAM, physical display/clock or FPGA/hardware
+operation is claimed.
